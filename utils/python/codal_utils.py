@@ -15,24 +15,11 @@ def system(cmd):
       sys.exit(1)
 
 def build(clean, verbose = False):
-    if platform.system() == "Windows":
-        # configure
-        system("cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -G \"Ninja\"")
+    # configure
+    system("cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -G \"Ninja\"")
 
-        # build
-        system("ninja")
-    else:
-        # configure
-        system("cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -G \"Unix Makefiles\"")
-
-        if clean:
-            system("make clean")
-
-        # build
-        if verbose:
-            system("make -j 10 VERBOSE=1")
-        else:
-            system("make -j 10")
+    # build
+    system("ninja")
 
 def read_json(fn):
     json_file = ""
