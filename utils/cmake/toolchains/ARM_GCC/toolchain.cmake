@@ -17,8 +17,13 @@ else()
     # from 3.5 the force_compiler macro is deprecated: CMake can detect
     # arm-none-eabi-gcc as being a GNU compiler automatically
     set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
-    #set(CMAKE_C_COMPILER "${ARM_NONE_EABI_GCC}")
-    #set(CMAKE_CXX_COMPILER "${ARM_NONE_EABI_GPP}")
+
+    # only include if running from build.py
+    if(MANUAL_COMPILER_INCLUDE)
+        message("Manually including compiler paths.")
+        set(CMAKE_C_COMPILER "${ARM_NONE_EABI_GCC}")
+        set(CMAKE_CXX_COMPILER "${ARM_NONE_EABI_GPP}")
+    endif()
 endif()
 
 SET(CMAKE_AR "${ARM_NONE_EABI_AR}" CACHE FILEPATH "Archiver")
