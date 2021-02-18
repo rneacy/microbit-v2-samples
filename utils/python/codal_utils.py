@@ -16,7 +16,7 @@ def system(cmd):
 
 def build(clean, verbose = False):
     # configure
-    system("cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -G \"Ninja\"")
+    system("cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMANUAL_COMPILER_INCLUDE=true -G \"Ninja\"")
 
     # build
     system("ninja")
