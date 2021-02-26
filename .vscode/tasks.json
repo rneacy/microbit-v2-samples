@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with build.py",
+            "type": "shell",
+            "command": "python build.py",
+			"windows": {
+				"command": "py build.py"
+			},
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build and deploy with build.py",
+            "type": "shell",
+            "command": "python build.py -f",
+			"windows": {
+				"command": "py build.py -f"
+			},
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Deploy",
+            "type": "shell",
+            "command": "python -c \"from flash import flash; flash()\"",
+			"windows":{
+				"command": "py -c \"from flash import flash; flash()\""
+			},
+            "problemMatcher": []
+        }
+    ]
+}
