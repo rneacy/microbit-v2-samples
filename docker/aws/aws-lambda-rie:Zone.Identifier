@@ -1,0 +1,3 @@
+[ZoneTransfer]
+ZoneId=3
+HostUrl=https://github-releases.githubusercontent.com/315763280/ccafe300-333e-11eb-8768-aeedde3202cf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210302T122856Z&X-Amz-Expires=300&X-Amz-Signature=5566bf98e5ffdc3c6cd6c1491978290df97ff9638c4e7f5d3f1796016466a311&X-Amz-SignedHeaders=host&actor_id=36864441&key_id=0&repo_id=315763280&response-content-disposition=attachment%3B%20filename%3Daws-lambda-rie&response-content-type=application%2Foctet-stream
