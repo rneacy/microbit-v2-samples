@@ -1,2 +1,4 @@
-def drip():
-    print("dab on it wagwan")
+import json
+
+def drip(event, context):
+    return "dab on it wagwan"
