@@ -14,7 +14,7 @@ arg FUNCTION_DIR
 run mkdir -p ${FUNCTION_DIR}
 copy app/* ${FUNCTION_DIR}
 
-run python -m pip install --target ${FUNCTION_DIR} awslambdaric
+run pip install awslambdaric --target ${FUNCTION_DIR} 
 
 FROM python:buster
 
