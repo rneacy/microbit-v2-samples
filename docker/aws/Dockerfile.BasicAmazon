@@ -1,5 +1,5 @@
-from amazon/aws-lambda-python:3.8
+FROM amazon/aws-lambda-python:3.8
 
-copy app/drip.py /var/task
+COPY app/lambda_function.py /var/task
 
-cmd ["drip.dab"]
+CMD ["lambda_function.lambda_handler"]

@@ -40,4 +40,4 @@ add aws-lambda-rie /usr/local/bin/aws-lambda-rie
 copy start.sh /
 entrypoint [ "/start.sh" ]
 
-cmd ["drip.dab"]
+#cmd ["drip.dab"]

@@ -1,4 +1,4 @@
-arg FUNCTION_DIR="/function"
+arg FUNCTION_DIR="/home/app/"
 
 FROM python:buster as build-img
 
@@ -35,9 +35,12 @@ workdir ${FUNCTION_DIR}
 
 copy --from=build-img ${FUNCTION_DIR} ${FUNCTION_DIR}
 
-add aws-lambda-rie /usr/local/bin/aws-lambda-rie
+#add aws-lambda-rie /usr/local/bin/aws-lambda-rie
+ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie /usr/bin/aws-lambda-rie
+
+RUN chmod 755 /usr/bin/aws-lambda-rie
 
 copy start.sh /
 entrypoint [ "/start.sh" ]
 
-cmd ["drip.dab"]
+cmd ["app.handler"]
